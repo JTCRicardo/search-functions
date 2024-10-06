@@ -37,6 +37,8 @@ int binary_timer(vector<string> container, string element) {
     auto end_time = std::chrono::system_clock::now();
     cout << "Binary search index of " << element << " is " << index << endl;
     std::chrono::duration<double, std::micro> final_time = (end_time - start_time);
+    //the lab said that the times might be 0 seconds. they are if you use the typical duration type
+    // but i wanted actual times so i just used microseconds as my time measurement
     double count = final_time.count();
     return count;
 }
@@ -45,6 +47,8 @@ int linear_timer(vector<string> container, string element) {
     int index = linear_search(container, element);
     auto end_time = std::chrono::system_clock::now();
     cout << "Linear search index of " << element << " is " << index << endl;
+    //the lab said that the times might be 0 seconds. they are if you use the typical duration type
+    // but i wanted actual times so i just used microseconds as my time measurement
     std::chrono::duration<double, std::micro> final_time = (end_time - start_time);
     double count = final_time.count();
     return count;
